@@ -1,0 +1,17 @@
+size util generated output for embox
+
+sort by text size
+   text	   data	    bss	    dec	    hex	filename
+ 646536	 758588	170859744	172264868	a448da4	build/base/bin/embox
+
+sort by data size
+   text	   data	    bss	    dec	    hex	filename
+ 646536	 758588	170859744	172264868	a448da4	build/base/bin/embox
+
+sort by bss size
+   text	   data	    bss	    dec	    hex	filename
+ 646536	 758588	170859744	172264868	a448da4	build/base/bin/embox
+
+sort by total size
+   text	   data	    bss	    dec	    hex	filename
+ 646536	 758588	170859744	172264868	a448da4	build/base/bin/embox

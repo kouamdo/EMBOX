@@ -1,0 +1,40 @@
+package embox.framework
+
+module mod {
+
+	/*FIXME mybuild make flags options */
+	@DefineMacro("__FRAMEWORK__")
+	source "core.c"
+
+	@DefineMacro("__EMBUILD__")
+	@Generated(script="$(MAKE) -f mk/script/c-runtime-inject.mk")
+	source "depsinject.c"
+
+	@Generated(script="$(MAKE) -f mk/script/lds-apps.mk")
+	source "apps.lds.S"
+
+	depends embox.util.Array
+	depends embox.util.log
+
+	option boolean security_label = true
+
+	depends embuild
+
+}
+
+module mod_integrity {
+	source "mod_integrity.c"
+	depends embox.lib.LibCrypt
+}
+
+@DefaultImpl(embuild_full)
+abstract module embuild { }
+
+module embuild_full extends embuild {
+}
+
+module embuild_light extends embuild {
+	option boolean use_mod_names = false
+
+	source "embuild_light_impl.h"
+}

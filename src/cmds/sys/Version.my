@@ -1,0 +1,19 @@
+package embox.cmd.sys
+
+@AutoCmd
+@Cmd(name = "version",
+	help = "Displays info associated with compilation",
+	man = '''
+		NAME
+			version - displays info associated with compilation
+		AUTHORS
+			Nikolay Korotky
+	''')
+module version {
+	source "version.c"
+
+	depends embox.compat.posix.util.getopt
+	depends embox.lib.debug.buildinfo
+	@NoRuntime depends embox.framework.cmd
+	@NoRuntime depends embox.compat.libc.stdio.printf
+}

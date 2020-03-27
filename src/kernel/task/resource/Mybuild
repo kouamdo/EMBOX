@@ -1,0 +1,59 @@
+package embox.kernel.task.resource
+
+module errno {
+	source "errno.c"
+
+	depends embox.kernel.task.task_resource
+	@NoRuntime depends embox.compat.libc.assert
+}
+
+module idesc_table {
+	@IncludeExport(path="kernel/task/resource")
+	source "idesc_table.h"
+
+	option number idesc_table_size=64
+	source "idesc_table.c"
+
+	@NoRuntime depends embox.fs.idesc
+	depends embox.kernel.task.task_resource
+	@NoRuntime depends embox.kernel.task.idesc
+	@NoRuntime depends embox.compat.libc.assert
+}
+
+module module_ptr {
+	source "module_ptr.c"
+}
+
+module vfs {
+	source "vfs.c"
+}
+
+module security {
+	option number security_size=32
+	source "security.c"
+
+	depends embox.kernel.task.task_resource
+	@NoRuntime depends embox.compat.libc.assert
+	@NoRuntime depends embox.compat.libc.str
+}
+
+module sig_table {
+	option number sig_table_size=64
+
+	source "sig_table.c"
+
+	depends embox.kernel.task.task_resource
+	@NoRuntime depends embox.compat.libc.assert
+	@NoRuntime depends embox.compat.libc.str
+}
+
+module thread_key_table {
+	source "thread_key_table.c", "thread_key_table.h"
+
+	depends embox.kernel.task.task_resource
+	@NoRuntime depends embox.kernel.thread.mutex
+	@NoRuntime depends embox.kernel.thread.thread_local
+	@NoRuntime depends embox.compat.libc.assert
+	@NoRuntime depends embox.util.indexator
+}
+

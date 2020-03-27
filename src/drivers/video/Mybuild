@@ -1,0 +1,111 @@
+/*FIXME mybuild wrong packet name */
+package embox.driver.video
+
+module fb_header {
+	@IncludeExport(path="drivers/video")
+	source "fb.h"
+}
+
+static module fb_section {
+	option number size = 0
+
+	source "fb.lds.S"
+}
+
+module fb {
+	source "fb.c"
+
+	option number fb_amount=2
+	option number log_level = 0
+
+	depends fb_header
+	depends embox.mem.pool
+	@NoRuntime depends embox.compat.libc.all
+	depends fb_videomodes
+	depends fonts
+	depends embox.driver.char_dev
+	depends embox.driver.video.fb_devfs
+}
+
+module fb_overlay {
+	@IncludeExport(path="drivers/video")
+	source "fb_overlay.h"
+
+	source "fb_overlay.c"
+
+	depends fb
+	depends fonts
+}
+
+module bochs {
+	source "bochs.c"
+
+	@IncludeExport(path="drivers/video")
+	source "vbe.h"
+
+	depends embox.driver.pci
+	@NoRuntime depends fb
+	@NoRuntime depends embox.compat.libc.all
+	depends embox.compat.posix.sys.mman.mmap_api
+}
+
+module raspi_video {
+	source "raspi_video.c"
+
+	depends embox.driver.mailbox.bcm2835_mailbox
+	@NoRuntime depends fb
+	@NoRuntime depends embox.compat.libc.all
+	depends embox.mem.vmem_device_memory
+	depends embox.compat.posix.sys.mman.mmap
+}
+
+module cirrus_logic {
+	source "cirrus_logic.c"
+
+	@IncludeExport(path="drivers/video")
+	source "cirrus_logic.h"
+
+	depends fb
+	depends embox.driver.pci
+	depends embox.compat.posix.sys.mman.mmap_api
+}
+
+module generic {
+	source "generic.c"
+
+	option number vendor_id
+	option number product_id
+
+	option number fb_bar = 0
+
+	depends fb
+	depends embox.driver.pci
+}
+
+module fb_videomodes {
+	source "fb_videomodes.c"
+
+	@IncludeExport(path="drivers/video")
+	source "fb_videomodes.h"
+
+	depends vesa_modes
+}
+
+module vesa_modes {
+	source "vesa_modes.c"
+
+	@IncludeExport(path="drivers/video")
+	source "vesa_modes.h"
+}
+
+module fonts {
+	source "fonts.c"
+
+	@IncludeExport(path="drivers/video")
+	source "font.h"
+}
+
+@BuildDepends(efm32zg_sk3200.bsp)
+module efm32_lcd {
+	source "efm32_lcd.c"
+}

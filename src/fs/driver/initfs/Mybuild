@@ -1,0 +1,30 @@
+package embox.fs.driver
+
+@DefaultImpl(initfs_old)
+abstract module initfs {
+	source "cpio.c", "initfs_cpio.S"
+	source "initfs.lds.S"
+}
+
+module initfs_old extends initfs {
+	option number log_level = 1
+
+	option number file_quantity=128
+
+	source "initfs_oldfs.c"
+	source "initfs_fops.c"
+
+	depends embox.fs.core
+	depends embox.mem.pool
+}
+
+module initfs_dvfs extends initfs {
+	option number log_level = 1
+
+	option number file_quantity=128
+
+	source "initfs_dvfs.c"
+	source "initfs_fops.c"
+
+	depends embox.fs.dvfs.core
+}

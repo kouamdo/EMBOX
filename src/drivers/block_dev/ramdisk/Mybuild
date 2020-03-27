@@ -1,0 +1,17 @@
+package embox.driver
+
+module ramdisk {
+	option number ramdisk_quantity = 8
+	option number size = 1048576
+	option number block_size = 512
+
+	@IncludeExport(path="drivers/block_dev/ramdisk")
+	source "ramdisk.h"
+	source "ramdisk.c"
+
+	depends embox.mem.pool
+	depends embox.mem.phymem
+	depends embox.util.indexator
+
+	depends embox.driver.block_dev
+}

@@ -1,0 +1,7 @@
+package embox.cmd.hardware.sensors
+
+@AutoCmd
+@Cmd(name="l3g4200d", help="l3g4200d sensor demo")
+module l3g4200d {
+	source "l3g4200d.c"
+}

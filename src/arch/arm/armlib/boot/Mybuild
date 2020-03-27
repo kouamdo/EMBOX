@@ -1,0 +1,27 @@
+package embox.arch.arm.armlib
+
+@DefaultImpl(static_excpt_table)
+abstract module setup_exception_table { }
+
+module low_excpt_table extends setup_exception_table {
+	source "low_excpt_table.S"
+	source "copy_excpt_table.S"
+	source "low_excpt_table_vmem_def.c"
+}
+
+module high_excpt_table extends setup_exception_table {
+	source "high_excpt_table.S"
+	source "copy_excpt_table.S"
+}
+
+module static_excpt_table extends setup_exception_table {
+	source "static_excpt_table.S"
+}
+
+module reset_handler {
+/*	option number irq_stack_size = 0x100 */
+
+	source "reset_handler.S"
+
+	depends setup_exception_table
+}

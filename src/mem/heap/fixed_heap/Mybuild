@@ -1,0 +1,11 @@
+package embox.mem
+
+module fixed_heap {
+	option number heap_start
+	option number heap_size
+	option string allocator_name = "__heap_fixed_pgallocator"
+
+	source "fixed_heap.c"
+
+	depends embox.mem.bitmask
+}

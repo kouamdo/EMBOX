@@ -1,0 +1,9 @@
+package embox.arch.arm.armlib
+
+module context extends embox.arch.context {
+	source "context.c"
+	source "context.h"
+	source "context_switch.S"
+
+	depends embox.arch.arm.fpu.fpu
+}

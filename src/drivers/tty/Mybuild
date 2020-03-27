@@ -1,0 +1,41 @@
+/*FIXME mybuild wrong packet name */
+package embox.driver.tty
+
+@DefaultImpl(task_breaking_enable)
+abstract module task_breaking {
+
+}
+
+module task_breaking_enable extends task_breaking {
+	source "task_break_enable.c"
+	depends embox.compat.posix.proc.signal
+}
+
+module task_breaking_disable extends task_breaking {
+	source "task_break_disable.c"
+}
+
+module tty {
+	source "tty.c"
+	option number io_buff_sz = 128
+	option number rx_buff_sz = 100
+
+	depends embox.fs.idesc
+	depends embox.fs.idesc_event
+
+	depends embox.kernel.thread.sync /* mutex */
+	depends embox.kernel.thread.sched_wait
+	depends task_breaking
+	depends embox.util.ring
+	depends embox.kernel.irq_lock
+
+	depends termios_ops
+}
+
+module termios_ops {
+	@IncludeExport(path="drivers/tty")
+	source "termios_ops.h"
+	source "termios_ops.c"
+
+	depends embox.util.ring
+}

@@ -1,0 +1,33 @@
+package embox.cmd.net
+
+@AutoCmd
+@Cmd(name = "telnetd",
+	help = "Start telnetd server",
+	man = '''
+		NAME
+			telnetd - telnet server
+		SYNOPSIS
+			telnetd
+		DESCRIPTION
+			Start telnetd server in the system
+		EXAMPLES
+			telnetd
+		AUTHORS
+			Vladimir Sokolov
+	''')
+module telnetd {
+	source "telnetd.c",
+		"telnet_util.c"
+
+	option number port = 23
+	option number max_connections = 5
+	option string shell = "tish"
+
+	depends embox.compat.posix.net.socket
+	depends embox.compat.posix.idx.ppty
+	depends embox.compat.posix.idx.select
+	depends embox.compat.posix.proc.signal
+	depends embox.compat.posix.proc.exec
+	depends embox.compat.posix.proc.waitpid
+	depends embox.compat.posix.proc.vfork
+}

@@ -1,0 +1,39 @@
+package embox.compat.posix.fs
+
+module all_dvfs extends all {
+	depends file_dvfs,
+		chdir,
+		dirent_dvfs,
+		fsop_dvfs,
+		getcwd,
+		umask,
+		xattr_dvfs,
+		libgen,
+		chmod_dvfs,
+		chown_dvfs,
+		mknod_dvfs
+}
+
+static module file_dvfs extends file {
+	depends embox.compat.posix.fs.file_ops
+	depends ftruncate_dvfs
+	depends lseek_dvfs
+	depends open_dvfs
+	depends ioctl
+	depends fstat
+	depends embox.compat.posix.fs.fsync
+	depends embox.compat.posix.fs.creat
+}
+
+static module fsop_dvfs extends fsop {
+	source "fsop.c"
+
+	depends stat_dvfs
+
+	depends creat
+	depends truncate
+
+	depends embox.fs.dvfs.core
+	depends embox.kernel.task.resource.errno
+	depends umask // mkdir
+}

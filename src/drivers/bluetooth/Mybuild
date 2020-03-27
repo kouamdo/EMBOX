@@ -1,0 +1,6 @@
+package embox.driver
+
+abstract module Bluetooth {
+	@IncludeExport(path="drivers/bluetooth")
+	source "bluetooth.h"
+}

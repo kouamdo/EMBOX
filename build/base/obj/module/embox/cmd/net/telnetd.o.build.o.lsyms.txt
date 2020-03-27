@@ -1,0 +1,7 @@
+.hidden
+telnet_open_slave_pty
+telnet_open_master_pty
+.hidden
+telnet_cmd
+telnet_handle_client_data
+

@@ -1,0 +1,20 @@
+package embox.compat.libc
+
+@DefaultImpl(math_builtins)
+abstract module math {
+}
+
+static module math_builtins extends embox.compat.libc.math {
+	source "math_builtins.c"
+	@IncludeExport(target_name="math.h")
+	source "math_builtins.h"
+}
+
+static module math_openlibm extends embox.compat.libc.math {
+	@IncludeExport(target_name="math.h")
+	source "math_openlibm.h"
+	depends third_party.lib.OpenLibm
+}
+
+static module math_libm_none extends embox.compat.libc.math {
+}

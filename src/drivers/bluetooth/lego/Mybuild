@@ -1,0 +1,46 @@
+package embox.driver.bluetooth.lego
+
+module usart {
+	@Type("pin") @Unique
+	option number rx_pin = 21
+	@Type("pin") @Unique
+	option number tx_pin = 22
+	@Type("pin") @Unique
+	option number sck_pin = 14
+	@Type("pin") @Unique
+	option number rts_pin = 24
+	@Type("pin") @Unique
+	option number cts_pin = 25
+	@Type("pin") @Unique
+	option number cmd_pin = 27
+	@Type("pin") @Unique
+	option number rst_pin = 11
+	@Type("pin") @Unique
+	option number cs_pin = 31
+
+	@Type("irq") @Unique
+	option number irq_num = 7
+
+	option number dev_id = 7
+
+	option number serial_port_offset = 0xFFFC4000
+
+	source "nxt_bluetooth_usart.c"
+
+	depends blue_core
+	depends embox.kernel.timer.sleep_api
+	depends embox.kernel.irq
+	depends embox.driver.gpio.at91_pins
+}
+
+module blue_core extends embox.driver.Bluetooth {
+	depends embox.driver.Bluetooth
+	option number log_level=0
+	@IncludeExport(path="drivers/bluetooth/lego")
+	source "blue_core4.h"
+
+	source "blue_core4.c"
+
+	option string bluetooth_pin = "1234"
+}
+

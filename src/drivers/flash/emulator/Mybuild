@@ -1,0 +1,11 @@
+package embox.driver.flash
+
+module emulator {
+	@IncludeExport(path="drivers/flash")
+	source "emulator.h"
+
+	source "emulator.c"
+
+	depends embox.mem.sysmalloc_api
+	depends embox.driver.flash.flash_fs
+}

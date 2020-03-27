@@ -1,0 +1,39 @@
+
+package embox.cmd.user
+
+@AutoCmd
+@Cmd(name = "login",
+	help = "Prompts user name and password and login that user",
+	man = '''
+		NAME
+			login - prompts user name and password and perform
+				login for that user
+		SYNOPSIS
+			login
+		DESCRIPTION
+			Logins user.
+		AUTHOR
+			Anton Kozlov
+	''')
+module login {
+	source "login.c"
+
+	option boolean security_support = true
+	//depends embox.security.smac
+
+	depends embox.compat.posix.proc.pid
+	depends embox.compat.posix.proc.uid
+	depends embox.compat.posix.util.gettimeofday
+	depends embox.compat.posix.util.getpass
+	depends embox.compat.posix.passwd
+	depends embox.compat.posix.utmp_api
+	depends embox.kernel.task.syslib.waitpid
+	depends embox.security.seculog
+	depends embox.compat.posix.crypt
+
+	depends embox.lib.readline_api
+
+	depends embox.cmd.sh.shell_api
+
+	depends embox.security.smac_user_db
+}

@@ -1,0 +1,8 @@
+package embox.lib
+
+static module Printk {
+	source "printk.c"
+
+	depends embox.driver.diag
+	@NoRuntime depends embox.compat.libc.stdio.print
+}

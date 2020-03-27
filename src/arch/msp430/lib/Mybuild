@@ -1,0 +1,13 @@
+
+package embox.arch.msp430
+
+static module libarch extends embox.arch.libarch {
+	source "setjmp.S"
+	depends abi
+}
+
+static module libgcc {
+	source "mulhi3.c"
+
+	depends embox.lib.libgcc
+}

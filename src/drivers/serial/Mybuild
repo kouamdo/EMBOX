@@ -1,0 +1,96 @@
+package embox.driver.serial
+
+@DefaultImpl(core_tty)
+abstract module core {
+	option number uart_max_n = 4
+	option number log_level = 1
+
+	source "uart_dev.c"
+
+	@IncludeExport(path="drivers/serial")
+	source "uart_device.h"
+
+	@NoRuntime depends embox.util.indexator
+	@NoRuntime depends embox.util.dlist
+	@NoRuntime depends embox.util.log
+	@NoRuntime depends embox.mem.pool
+}
+
+module core_tty extends core {
+	@NoRuntime depends embox.driver.tty.serial
+	@NoRuntime depends embox.driver.common
+}
+
+module core_notty extends core {
+	@NoRuntime depends embox.driver.tty.serial_stub
+	@NoRuntime depends embox.driver.common
+}
+
+module diag {
+	source "diag_serial.c"
+
+	@IncludeExport(path="drivers/serial")
+	source "diag_serial.h"
+}
+
+module at91_uart extends embox.driver.diag.diag_api {
+	option number baud_rate
+
+	source "at91_uart.c"
+}
+
+module stm32_usart extends embox.driver.diag.diag_api {
+	option number baud_rate
+	/*option boolean hw_flow = false*/
+
+	source "stm32_usart.c"
+
+	depends embox.driver.gpio.stm32
+	depends core
+	depends diag
+}
+
+@BuildDepends(efm32zg_sk3200.bsp)
+module efm32_leuart extends embox.driver.diag.diag_api {
+	option number baud_rate
+
+	source "efm32_leuart.c"
+
+	depends efm32zg_sk3200.bsp
+	depends core
+	depends diag
+}
+
+module mspdebug_console extends embox.driver.diag.diag_api {
+	source "mspdebug_simio.c"
+}
+
+module msp430usci extends embox.driver.diag.diag_api {
+	source "msp430usci.c"
+}
+
+module pic32mx_uart extends embox.driver.diag.diag_api {
+	source "pic32mx_uart.c"
+}
+
+module bpi extends embox.driver.diag.diag_api {
+	option number base_addr = 0x01C28000
+
+	source "bpi_uart.c"
+}
+
+@BuildDepends(third_party.bsp.multiclet.core)
+module multiclet extends embox.driver.diag.diag_api {
+	option number baud_rate
+	source "multiclet_uart.c"
+
+	depends third_party.bsp.multiclet.core
+}
+
+module sifive_uart extends embox.driver.diag.diag_api {
+	option number base_addr
+	option number clock_freq
+	option number baud_rate
+
+	source "sifive_uart.c"
+}

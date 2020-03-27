@@ -1,0 +1,20 @@
+package embox.driver.input.keyboard
+
+module kbd_defs {
+	@IncludeExport(path="drivers")
+	source "keyboard.h"
+}
+
+module keyboard {
+	source "keyboard.c"
+
+	option number register_in_vt = 1
+
+	depends kbd_defs
+	depends embox.driver.input.core
+	depends embox.driver.tty.vterm
+}
+
+module keymap {
+	source "keymap.c"
+}

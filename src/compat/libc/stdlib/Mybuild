@@ -1,0 +1,58 @@
+package embox.compat.libc.stdlib
+
+static module rand {
+	source "rand.c"
+	source "random.c"
+	source "random_r.c"
+}
+
+static module config {
+	source "getpagesize.c"
+	source "sysconf.c"
+
+	depends embox.mem.page_api
+}
+
+static module core {
+	source "bsearch.c"
+	source "qsort.c"
+	source "strtod.c"
+	source "strtol.c"
+	source "strtoul.c"
+	source "abort.c"
+	source "strtoll.c"
+	source "strtoull.c"
+	source "atol.c"
+	source "itoa.c"
+
+	depends config
+	@NoRuntime depends rand /* qsort required*/
+}
+
+static module system {
+	source "system.c"
+	depends embox.cmd.sh.shell_registry
+}
+
+static module multibyte {
+	source "wcstombs.c"
+	source "mbstowcs.c"
+	source "mblen.c"
+	source "mbtowc.c"
+	source "wctomb.c"
+}
+
+static module mktemp {
+	option number log_level=4
+
+	source "mkstemp.c"
+}
+
+static module all {
+	depends core,
+		config,
+		rand,
+		system,
+		multibyte,
+		mktemp
+}

@@ -1,0 +1,34 @@
+package embox.mem
+
+module vmem_header {
+	@IncludeExport(path="mem")
+	source "vmem.h"
+}
+
+module vmem_nommu extends embox.arch.mmu {
+	@IncludeExport(path="mem",target_name="vmem.h")
+	source "vmem_nommu.h"
+}
+
+module vmem extends embox.arch.mmu {
+	option number log_level = 1
+
+	source "vmem.c"
+	source "mapper.c"
+	source "vmem_context.c"
+}
+
+module vmem_depends {
+	depends embox.mem.vmem_alloc
+	depends embox.mem.page_api
+
+	@NoRuntime depends embox.mem.mmap_header
+	@NoRuntime depends embox.mem.mmap
+	depends embox.fs.syslib.idesc_mmap_api
+	@NoRuntime depends vmem_header
+	depends embox.kernel.task.kernel_task
+	depends embox.kernel.task.resource.mmap
+	depends embox.driver.periph_memory_mmap
+
+	@NoRuntime depends embox.mem.vmem_device_memory_full
+}

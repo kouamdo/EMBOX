@@ -1,0 +1,35 @@
+package embox.test.stdio
+
+module printf_test {
+	source "printf_test.c"
+
+	depends embox.compat.libc.all
+	depends embox.framework.LibFramework
+}
+
+module scanf_test {
+	source "scanf_test.c"
+
+	depends embox.compat.libc.all
+	depends embox.framework.LibFramework
+}
+
+module fgets_test {
+	source "fgets_test.c"
+	@InitFS
+	source  "test_fgets.txt",
+			"test_fgets_empty.txt"
+	depends embox.compat.libc.all
+	depends embox.framework.LibFramework
+}
+
+module file_io_error_test {
+	source "file_io_error_test.c"
+	
+	@InitFS
+	source  "file_io_error_test.txt"
+
+	depends embox.compat.libc.stdio.all
+	depends embox.framework.test
+	depends embox.framework.LibFramework
+}

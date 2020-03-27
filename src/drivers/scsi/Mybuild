@@ -1,0 +1,20 @@
+package embox.driver
+
+module scsi_disk {
+	option number log_level=1
+
+
+}
+
+module scsi {
+	option number log_level = 1
+
+	source "scsi.c"
+	@IncludeExport(path="drivers")
+	source "scsi.h"
+
+	source "scsi_disk.c"
+	source "scsi_disk_create.c"
+
+	@NoRuntime depends embox.driver.block.partition
+}

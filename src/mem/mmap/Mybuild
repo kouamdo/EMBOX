@@ -1,0 +1,16 @@
+package embox.mem
+
+module mmap_header {
+	@IncludeExport(path="mem/mapping")
+	source "mmap.h"
+}
+
+module mmap {
+	source "mmap.c"
+
+	depends marea
+	depends mmap_header
+	depends embox.kernel.task.resource.mmap
+
+	depends embox.arch.mmu /* FIXME. depends only for runtime sequence */
+}

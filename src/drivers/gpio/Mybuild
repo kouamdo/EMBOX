@@ -1,0 +1,20 @@
+package embox.driver.gpio
+
+module core {
+	option number log_level = 1
+	option number gpio_chips_count = 1
+	option number gpio_irqs_count = 4 /* Number of GPIO pins irq handlers */
+
+	/* User API */
+	@IncludeExport(path="drivers/gpio")
+	source "gpio.h"
+
+	/* Driver API */
+	@IncludeExport(path="drivers/gpio")
+	source "gpio_driver.h"
+
+	source "gpio.c"
+}
+
+/* Should be implemented by GPIO drivers */
+abstract module api {}

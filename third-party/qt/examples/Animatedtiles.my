@@ -1,0 +1,16 @@
+package third_party.qt.example
+
+@AutoCmd
+@Build(script="TARGET=$(EXTERNAL_BUILD_DIR)/third_party/qt/core/qt-everywhere-opensource-src-4.8.5/examples/animation/animatedtiles; $(EXTERNAL_MAKE_PRO)")
+@BuildDepends(third_party.qt.core)
+@Cmd(name = "animatedtiles",
+	help = "animation qt's example",
+	man = '''
+		AUTHORS
+			Ilia Vaprol
+	''')
+module animatedtiles {
+	source "^BUILD/extbld/^MOD_PATH/animatedtiles.embox.o"
+
+	@NoRuntime depends third_party.qt.core
+}

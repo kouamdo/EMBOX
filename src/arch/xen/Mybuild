@@ -1,0 +1,32 @@
+package embox.arch.xen
+
+module xen_header {
+	source "xen_header.S",
+		"xen_header.lds.S"
+}
+
+module boot {
+	source "boot.S",
+		"kernel_init.c"
+        depends xenstore
+}
+
+module traps {
+	source "traps.c"
+}
+
+module xenstore {
+        source "xenstore.c"
+}
+
+module xenstore_test {
+	source "xenstore_test.c"
+}
+
+module event {
+	source "event.c"
+}
+
+module ipl extends embox.arch.interrupt {
+	source "ipl.c", "ipl.h"
+}

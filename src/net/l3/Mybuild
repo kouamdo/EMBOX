@@ -1,0 +1,79 @@
+package embox.net
+
+module arp {
+	option number log_level = 0
+	source "arp.c"
+
+	@NoRuntime depends embox.net.net_pack
+	@NoRuntime depends embox.compat.libc.assert
+	@NoRuntime depends embox.compat.libc.str
+	@NoRuntime depends embox.net.core
+	@NoRuntime depends embox.net.net_tx
+	@NoRuntime depends embox.net.lib.arp
+	@NoRuntime depends embox.net.neighbour
+	@NoRuntime depends embox.net.skbuff
+}
+
+module icmpv4 {
+	option number log_level = 0
+	source "icmpv4.c"
+
+	depends proto
+	depends embox.compat.libc.assert
+	depends embox.net.lib.icmpv4
+	depends embox.net.lib.ipv4
+	depends embox.net.skbuff
+}
+
+module icmpv6 {
+	option number log_level = 0
+	source "icmpv6.c"
+
+	depends embox.net.proto
+	depends embox.compat.libc.assert
+	depends embox.compat.libc.str
+	depends embox.net.core
+	depends embox.net.lib.icmpv6
+	depends embox.net.lib.ipv6
+	depends embox.net.skbuff
+}
+
+module ndp {
+	source "ndp.c"
+
+	depends embox.compat.libc.assert
+	depends embox.compat.libc.str
+	@NoRuntime depends embox.net.lib.icmpv6
+	@NoRuntime depends embox.net.lib.ipv6
+	depends embox.net.net_tx
+	depends embox.net.skbuff
+}
+
+module rarp {
+	option number log_level = 0
+	source "rarp.c"
+
+	@NoRuntime depends embox.net.net_pack
+	@NoRuntime depends embox.compat.libc.assert
+	@NoRuntime depends embox.compat.libc.str
+	@NoRuntime depends embox.net.core
+	@NoRuntime depends embox.net.net_tx
+	@NoRuntime depends embox.net.lib.arp
+	@NoRuntime depends embox.net.neighbour
+	@NoRuntime depends embox.net.skbuff
+}
+
+module route {
+	option number route_table_size=8
+	source "route.c"
+
+	depends core /* for inetdev.c */
+	depends embox.mem.pool
+	depends embox.util.dlist
+}
+
+module proto {
+	source "proto.c"
+
+	depends embox.util.Array
+}

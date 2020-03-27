@@ -1,0 +1,17 @@
+/**
+ * @file
+ * @brief C++ forwarding header
+ * @date 10.02.14
+ * @author Ilia Vaprol
+ */
+
+#ifndef CWCHAR_
+#define CWCHAR_
+
+#include <wchar.h>
+
+namespace std {
+	using ::mbstate_t;
+}
+
+#endif // CWCHAR_

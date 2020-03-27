@@ -1,0 +1,16 @@
+package embox.cmd
+
+module shell extends embox.cmd.sh.shell_api {
+	option number prompt_len = 80
+	option number history_size = 8
+
+	@IncludePath("$(CONF_DIR)")
+	source "shell.c", "console/console.c",
+		"console/cmdline.c", "console/screen.c",
+		"console/screen_in.c", "console/screen_out.c"
+
+	depends embox.lib.Tokenizer
+	depends embox.driver.terminal
+	depends embox.cmd.sh.shell_registry
+	@NoRuntime depends embox.framework.cmd
+}

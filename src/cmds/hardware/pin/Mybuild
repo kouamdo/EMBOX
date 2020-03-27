@@ -1,0 +1,29 @@
+package embox.cmd.hardware
+
+@AutoCmd
+@Cmd(name = "pin",
+	man = '''
+	NAME
+		pin  -  Control pin voltage on board
+	SYNOPSIS
+		pin <gpio> <pin> <state>
+	DESCRIPTION
+	<state> must be one of:
+		get    -- Get value of pin 
+		set    -- Up pin 
+		reset  -- Down pin 
+		unset  -- Down pin 
+		toggle -- Reverts pin 
+		blink  -- Toggle pin every second
+	AUTHORS
+		Denis Deryugin <deryugin.denis@gmail.com>
+	''')
+
+@BuildDepends(third_party.bsp.stmf4cube.core)
+module pin {
+	source "pin.c"
+
+	depends embox.compat.libc.stdio.printf
+	depends embox.compat.posix.util.getopt
+	depends embox.driver.gpio.core
+}
