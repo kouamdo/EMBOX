@@ -6,7 +6,7 @@
 # .obj1@3757dca7
 .obj1@3757dca7 := MyFileResource
 .obj1@3757dca7.issues := 
-.obj1@3757dca7.contentsRoot := .obj55@3757dca7
+.obj1@3757dca7.contentsRoot := .obj53@3757dca7
 .obj1@3757dca7.resourceSet := 
 .obj1@3757dca7.fileName := src/tests/mem/Mybuild
 .obj1@3757dca7.exports := \
@@ -19,7 +19,7 @@
 	embox.test.mem.slab \
 	embox.test.mem.mmap
 .obj1@3757dca7.exports.embox.test.mem := \
-	.obj55@3757dca7
+	.obj53@3757dca7
 .obj1@3757dca7.exports.embox.test.mem.objalloc := \
 	.obj8@3757dca7
 .obj1@3757dca7.exports.embox.test.mem.page := \
@@ -27,28 +27,28 @@
 .obj1@3757dca7.exports.embox.test.mem.page_allocator := \
 	.obj24@3757dca7
 .obj1@3757dca7.exports.embox.test.mem.memmove := \
-	.obj31@3757dca7
+	.obj29@3757dca7
 .obj1@3757dca7.exports.embox.test.mem.pool_test := \
-	.obj38@3757dca7
+	.obj36@3757dca7
 .obj1@3757dca7.exports.embox.test.mem.slab := \
-	.obj45@3757dca7
+	.obj43@3757dca7
 .obj1@3757dca7.exports.embox.test.mem.mmap := \
-	.obj54@3757dca7
+	.obj52@3757dca7
 
-# .obj55@3757dca7
-.obj55@3757dca7 := MyFileContentRoot
-.obj55@3757dca7.__eContents := \
+# .obj53@3757dca7
+.obj53@3757dca7 := MyFileContentRoot
+.obj53@3757dca7.__eContents := \
 	types/.obj8@3757dca7 \
 	types/.obj17@3757dca7 \
 	types/.obj24@3757dca7 \
-	types/.obj31@3757dca7 \
-	types/.obj38@3757dca7 \
-	types/.obj45@3757dca7 \
-	types/.obj54@3757dca7
-.obj55@3757dca7.__eContainer := .obj1@3757dca7
-.obj55@3757dca7.imports := 
-.obj55@3757dca7.name := embox.test.mem
-.obj55@3757dca7.origin := 
+	types/.obj29@3757dca7 \
+	types/.obj36@3757dca7 \
+	types/.obj43@3757dca7 \
+	types/.obj52@3757dca7
+.obj53@3757dca7.__eContainer := .obj1@3757dca7
+.obj53@3757dca7.imports := 
+.obj53@3757dca7.name := embox.test.mem
+.obj53@3757dca7.origin := 
 
 # .obj8@3757dca7
 .obj8@3757dca7 := MyModuleType
@@ -56,7 +56,7 @@
 	sourcesMembers/.obj3@3757dca7 \
 	dependsMembers/.obj5@3757dca7 \
 	dependsMembers/.obj7@3757dca7
-.obj8@3757dca7.__eContainer := fileContentRoot/types.obj55@3757dca7
+.obj8@3757dca7.__eContainer := fileContentRoot/types.obj53@3757dca7
 .obj8@3757dca7.dependent := 
 .obj8@3757dca7.subTypes := 
 .obj8@3757dca7.modifiers := 
@@ -115,7 +115,7 @@
 	dependsMembers/.obj12@3757dca7 \
 	dependsMembers/.obj14@3757dca7 \
 	dependsMembers/.obj16@3757dca7
-.obj17@3757dca7.__eContainer := fileContentRoot/types.obj55@3757dca7
+.obj17@3757dca7.__eContainer := fileContentRoot/types.obj53@3757dca7
 .obj17@3757dca7.dependent := 
 .obj17@3757dca7.subTypes := 
 .obj17@3757dca7.modifiers := 
@@ -188,7 +188,7 @@
 	sourcesMembers/.obj19@3757dca7 \
 	dependsMembers/.obj21@3757dca7 \
 	dependsMembers/.obj23@3757dca7
-.obj24@3757dca7.__eContainer := fileContentRoot/types.obj55@3757dca7
+.obj24@3757dca7.__eContainer := fileContentRoot/types.obj53@3757dca7
 .obj24@3757dca7.dependent := 
 .obj24@3757dca7.subTypes := 
 .obj24@3757dca7.modifiers := 
@@ -240,26 +240,25 @@
 .obj22@3757dca7.name := embox.framework.LibFramework
 .obj22@3757dca7.origin := 22:10
 
-# .obj31@3757dca7
-.obj31@3757dca7 := MyModuleType
-.obj31@3757dca7.__eContents := \
+# .obj29@3757dca7
+.obj29@3757dca7 := MyModuleType
+.obj29@3757dca7.__eContents := \
 	sourcesMembers/.obj26@3757dca7 \
-	dependsMembers/.obj28@3757dca7 \
-	dependsMembers/.obj30@3757dca7
-.obj31@3757dca7.__eContainer := fileContentRoot/types.obj55@3757dca7
-.obj31@3757dca7.dependent := 
-.obj31@3757dca7.subTypes := 
-.obj31@3757dca7.modifiers := 
-.obj31@3757dca7.name := memmove
-.obj31@3757dca7.origin := 25:8
-.obj31@3757dca7.superType := 
-.obj31@3757dca7.customStorage := 
+	dependsMembers/.obj28@3757dca7
+.obj29@3757dca7.__eContainer := fileContentRoot/types.obj53@3757dca7
+.obj29@3757dca7.dependent := 
+.obj29@3757dca7.subTypes := 
+.obj29@3757dca7.modifiers := 
+.obj29@3757dca7.name := memmove
+.obj29@3757dca7.origin := 25:8
+.obj29@3757dca7.superType := 
+.obj29@3757dca7.customStorage := 
 
 # .obj26@3757dca7
 .obj26@3757dca7 := MySourceMember
 .obj26@3757dca7.__eContents := \
 	files/.obj25@3757dca7
-.obj26@3757dca7.__eContainer := /sourcesMembers.obj31@3757dca7
+.obj26@3757dca7.__eContainer := /sourcesMembers.obj29@3757dca7
 .obj26@3757dca7.module := 
 
 # .obj25@3757dca7
@@ -271,7 +270,7 @@
 # .obj28@3757dca7
 .obj28@3757dca7 := MyDependsMember
 .obj28@3757dca7.__eContents := 
-.obj28@3757dca7.__eContainer := /dependsMembers.obj31@3757dca7
+.obj28@3757dca7.__eContainer := /dependsMembers.obj29@3757dca7
 .obj28@3757dca7.modules := \
 	.obj27@3757dca7./
 .obj28@3757dca7.module := 
@@ -280,56 +279,56 @@
 .obj27@3757dca7 := ELink
 .obj27@3757dca7.eSource := MyFile_DependsMember_modules.obj28@3757dca7
 .obj27@3757dca7.eTarget := 
-.obj27@3757dca7.name := embox.mem.memmove
+.obj27@3757dca7.name := embox.framework.LibFramework
 .obj27@3757dca7.origin := 29:10
 
+# .obj36@3757dca7
+.obj36@3757dca7 := MyModuleType
+.obj36@3757dca7.__eContents := \
+	sourcesMembers/.obj31@3757dca7 \
+	dependsMembers/.obj33@3757dca7 \
+	dependsMembers/.obj35@3757dca7
+.obj36@3757dca7.__eContainer := fileContentRoot/types.obj53@3757dca7
+.obj36@3757dca7.dependent := 
+.obj36@3757dca7.subTypes := 
+.obj36@3757dca7.modifiers := 
+.obj36@3757dca7.name := pool_test
+.obj36@3757dca7.origin := 32:8
+.obj36@3757dca7.superType := 
+.obj36@3757dca7.customStorage := 
+
+# .obj31@3757dca7
+.obj31@3757dca7 := MySourceMember
+.obj31@3757dca7.__eContents := \
+	files/.obj30@3757dca7
+.obj31@3757dca7.__eContainer := /sourcesMembers.obj36@3757dca7
+.obj31@3757dca7.module := 
+
 # .obj30@3757dca7
-.obj30@3757dca7 := MyDependsMember
+.obj30@3757dca7 := MyFileName
 .obj30@3757dca7.__eContents := 
-.obj30@3757dca7.__eContainer := /dependsMembers.obj31@3757dca7
-.obj30@3757dca7.modules := \
-	.obj29@3757dca7./
-.obj30@3757dca7.module := 
-
-# .obj29@3757dca7
-.obj29@3757dca7 := ELink
-.obj29@3757dca7.eSource := MyFile_DependsMember_modules.obj30@3757dca7
-.obj29@3757dca7.eTarget := 
-.obj29@3757dca7.name := embox.framework.LibFramework
-.obj29@3757dca7.origin := 30:10
-
-# .obj38@3757dca7
-.obj38@3757dca7 := MyModuleType
-.obj38@3757dca7.__eContents := \
-	sourcesMembers/.obj33@3757dca7 \
-	dependsMembers/.obj35@3757dca7 \
-	dependsMembers/.obj37@3757dca7
-.obj38@3757dca7.__eContainer := fileContentRoot/types.obj55@3757dca7
-.obj38@3757dca7.dependent := 
-.obj38@3757dca7.subTypes := 
-.obj38@3757dca7.modifiers := 
-.obj38@3757dca7.name := pool_test
-.obj38@3757dca7.origin := 33:8
-.obj38@3757dca7.superType := 
-.obj38@3757dca7.customStorage := 
+.obj30@3757dca7.__eContainer := /files.obj31@3757dca7
+.obj30@3757dca7.fileName := pool_test.c
 
 # .obj33@3757dca7
-.obj33@3757dca7 := MySourceMember
-.obj33@3757dca7.__eContents := \
-	files/.obj32@3757dca7
-.obj33@3757dca7.__eContainer := /sourcesMembers.obj38@3757dca7
+.obj33@3757dca7 := MyDependsMember
+.obj33@3757dca7.__eContents := 
+.obj33@3757dca7.__eContainer := /dependsMembers.obj36@3757dca7
+.obj33@3757dca7.modules := \
+	.obj32@3757dca7./
 .obj33@3757dca7.module := 
 
 # .obj32@3757dca7
-.obj32@3757dca7 := MyFileName
-.obj32@3757dca7.__eContents := 
-.obj32@3757dca7.__eContainer := /files.obj33@3757dca7
-.obj32@3757dca7.fileName := pool_test.c
+.obj32@3757dca7 := ELink
+.obj32@3757dca7.eSource := MyFile_DependsMember_modules.obj33@3757dca7
+.obj32@3757dca7.eTarget := 
+.obj32@3757dca7.name := embox.mem.pool
+.obj32@3757dca7.origin := 35:10
 
 # .obj35@3757dca7
 .obj35@3757dca7 := MyDependsMember
 .obj35@3757dca7.__eContents := 
-.obj35@3757dca7.__eContainer := /dependsMembers.obj38@3757dca7
+.obj35@3757dca7.__eContainer := /dependsMembers.obj36@3757dca7
 .obj35@3757dca7.modules := \
 	.obj34@3757dca7./
 .obj35@3757dca7.module := 
@@ -338,56 +337,56 @@
 .obj34@3757dca7 := ELink
 .obj34@3757dca7.eSource := MyFile_DependsMember_modules.obj35@3757dca7
 .obj34@3757dca7.eTarget := 
-.obj34@3757dca7.name := embox.mem.pool
+.obj34@3757dca7.name := embox.framework.LibFramework
 .obj34@3757dca7.origin := 36:10
 
+# .obj43@3757dca7
+.obj43@3757dca7 := MyModuleType
+.obj43@3757dca7.__eContents := \
+	sourcesMembers/.obj38@3757dca7 \
+	dependsMembers/.obj40@3757dca7 \
+	dependsMembers/.obj42@3757dca7
+.obj43@3757dca7.__eContainer := fileContentRoot/types.obj53@3757dca7
+.obj43@3757dca7.dependent := 
+.obj43@3757dca7.subTypes := 
+.obj43@3757dca7.modifiers := 
+.obj43@3757dca7.name := slab
+.obj43@3757dca7.origin := 39:8
+.obj43@3757dca7.superType := 
+.obj43@3757dca7.customStorage := 
+
+# .obj38@3757dca7
+.obj38@3757dca7 := MySourceMember
+.obj38@3757dca7.__eContents := \
+	files/.obj37@3757dca7
+.obj38@3757dca7.__eContainer := /sourcesMembers.obj43@3757dca7
+.obj38@3757dca7.module := 
+
 # .obj37@3757dca7
-.obj37@3757dca7 := MyDependsMember
+.obj37@3757dca7 := MyFileName
 .obj37@3757dca7.__eContents := 
-.obj37@3757dca7.__eContainer := /dependsMembers.obj38@3757dca7
-.obj37@3757dca7.modules := \
-	.obj36@3757dca7./
-.obj37@3757dca7.module := 
-
-# .obj36@3757dca7
-.obj36@3757dca7 := ELink
-.obj36@3757dca7.eSource := MyFile_DependsMember_modules.obj37@3757dca7
-.obj36@3757dca7.eTarget := 
-.obj36@3757dca7.name := embox.framework.LibFramework
-.obj36@3757dca7.origin := 37:10
-
-# .obj45@3757dca7
-.obj45@3757dca7 := MyModuleType
-.obj45@3757dca7.__eContents := \
-	sourcesMembers/.obj40@3757dca7 \
-	dependsMembers/.obj42@3757dca7 \
-	dependsMembers/.obj44@3757dca7
-.obj45@3757dca7.__eContainer := fileContentRoot/types.obj55@3757dca7
-.obj45@3757dca7.dependent := 
-.obj45@3757dca7.subTypes := 
-.obj45@3757dca7.modifiers := 
-.obj45@3757dca7.name := slab
-.obj45@3757dca7.origin := 40:8
-.obj45@3757dca7.superType := 
-.obj45@3757dca7.customStorage := 
+.obj37@3757dca7.__eContainer := /files.obj38@3757dca7
+.obj37@3757dca7.fileName := slab.c
 
 # .obj40@3757dca7
-.obj40@3757dca7 := MySourceMember
-.obj40@3757dca7.__eContents := \
-	files/.obj39@3757dca7
-.obj40@3757dca7.__eContainer := /sourcesMembers.obj45@3757dca7
+.obj40@3757dca7 := MyDependsMember
+.obj40@3757dca7.__eContents := 
+.obj40@3757dca7.__eContainer := /dependsMembers.obj43@3757dca7
+.obj40@3757dca7.modules := \
+	.obj39@3757dca7./
 .obj40@3757dca7.module := 
 
 # .obj39@3757dca7
-.obj39@3757dca7 := MyFileName
-.obj39@3757dca7.__eContents := 
-.obj39@3757dca7.__eContainer := /files.obj40@3757dca7
-.obj39@3757dca7.fileName := slab.c
+.obj39@3757dca7 := ELink
+.obj39@3757dca7.eSource := MyFile_DependsMember_modules.obj40@3757dca7
+.obj39@3757dca7.eTarget := 
+.obj39@3757dca7.name := embox.mem.slab
+.obj39@3757dca7.origin := 42:10
 
 # .obj42@3757dca7
 .obj42@3757dca7 := MyDependsMember
 .obj42@3757dca7.__eContents := 
-.obj42@3757dca7.__eContainer := /dependsMembers.obj45@3757dca7
+.obj42@3757dca7.__eContainer := /dependsMembers.obj43@3757dca7
 .obj42@3757dca7.modules := \
 	.obj41@3757dca7./
 .obj42@3757dca7.module := 
@@ -396,57 +395,57 @@
 .obj41@3757dca7 := ELink
 .obj41@3757dca7.eSource := MyFile_DependsMember_modules.obj42@3757dca7
 .obj41@3757dca7.eTarget := 
-.obj41@3757dca7.name := embox.mem.slab
+.obj41@3757dca7.name := embox.framework.LibFramework
 .obj41@3757dca7.origin := 43:10
 
-# .obj44@3757dca7
-.obj44@3757dca7 := MyDependsMember
-.obj44@3757dca7.__eContents := 
-.obj44@3757dca7.__eContainer := /dependsMembers.obj45@3757dca7
-.obj44@3757dca7.modules := \
-	.obj43@3757dca7./
-.obj44@3757dca7.module := 
-
-# .obj43@3757dca7
-.obj43@3757dca7 := ELink
-.obj43@3757dca7.eSource := MyFile_DependsMember_modules.obj44@3757dca7
-.obj43@3757dca7.eTarget := 
-.obj43@3757dca7.name := embox.framework.LibFramework
-.obj43@3757dca7.origin := 44:10
-
-# .obj54@3757dca7
-.obj54@3757dca7 := MyModuleType
-.obj54@3757dca7.__eContents := \
-	sourcesMembers/.obj47@3757dca7 \
+# .obj52@3757dca7
+.obj52@3757dca7 := MyModuleType
+.obj52@3757dca7.__eContents := \
+	sourcesMembers/.obj45@3757dca7 \
+	dependsMembers/.obj47@3757dca7 \
 	dependsMembers/.obj49@3757dca7 \
-	dependsMembers/.obj51@3757dca7 \
-	dependsMembers/.obj53@3757dca7
-.obj54@3757dca7.__eContainer := fileContentRoot/types.obj55@3757dca7
-.obj54@3757dca7.dependent := 
-.obj54@3757dca7.subTypes := 
-.obj54@3757dca7.modifiers := 
-.obj54@3757dca7.name := mmap
-.obj54@3757dca7.origin := 47:8
-.obj54@3757dca7.superType := 
-.obj54@3757dca7.customStorage := 
+	dependsMembers/.obj51@3757dca7
+.obj52@3757dca7.__eContainer := fileContentRoot/types.obj53@3757dca7
+.obj52@3757dca7.dependent := 
+.obj52@3757dca7.subTypes := 
+.obj52@3757dca7.modifiers := 
+.obj52@3757dca7.name := mmap
+.obj52@3757dca7.origin := 46:8
+.obj52@3757dca7.superType := 
+.obj52@3757dca7.customStorage := 
+
+# .obj45@3757dca7
+.obj45@3757dca7 := MySourceMember
+.obj45@3757dca7.__eContents := \
+	files/.obj44@3757dca7
+.obj45@3757dca7.__eContainer := /sourcesMembers.obj52@3757dca7
+.obj45@3757dca7.module := 
+
+# .obj44@3757dca7
+.obj44@3757dca7 := MyFileName
+.obj44@3757dca7.__eContents := 
+.obj44@3757dca7.__eContainer := /files.obj45@3757dca7
+.obj44@3757dca7.fileName := mmap.c
 
 # .obj47@3757dca7
-.obj47@3757dca7 := MySourceMember
-.obj47@3757dca7.__eContents := \
-	files/.obj46@3757dca7
-.obj47@3757dca7.__eContainer := /sourcesMembers.obj54@3757dca7
+.obj47@3757dca7 := MyDependsMember
+.obj47@3757dca7.__eContents := 
+.obj47@3757dca7.__eContainer := /dependsMembers.obj52@3757dca7
+.obj47@3757dca7.modules := \
+	.obj46@3757dca7./
 .obj47@3757dca7.module := 
 
 # .obj46@3757dca7
-.obj46@3757dca7 := MyFileName
-.obj46@3757dca7.__eContents := 
-.obj46@3757dca7.__eContainer := /files.obj47@3757dca7
-.obj46@3757dca7.fileName := mmap.c
+.obj46@3757dca7 := ELink
+.obj46@3757dca7.eSource := MyFile_DependsMember_modules.obj47@3757dca7
+.obj46@3757dca7.eTarget := 
+.obj46@3757dca7.name := embox.arch.mmu
+.obj46@3757dca7.origin := 49:10
 
 # .obj49@3757dca7
 .obj49@3757dca7 := MyDependsMember
 .obj49@3757dca7.__eContents := 
-.obj49@3757dca7.__eContainer := /dependsMembers.obj54@3757dca7
+.obj49@3757dca7.__eContainer := /dependsMembers.obj52@3757dca7
 .obj49@3757dca7.modules := \
 	.obj48@3757dca7./
 .obj49@3757dca7.module := 
@@ -455,13 +454,13 @@
 .obj48@3757dca7 := ELink
 .obj48@3757dca7.eSource := MyFile_DependsMember_modules.obj49@3757dca7
 .obj48@3757dca7.eTarget := 
-.obj48@3757dca7.name := embox.arch.mmu
+.obj48@3757dca7.name := embox.kernel.task.resource.mmap_full
 .obj48@3757dca7.origin := 50:10
 
 # .obj51@3757dca7
 .obj51@3757dca7 := MyDependsMember
 .obj51@3757dca7.__eContents := 
-.obj51@3757dca7.__eContainer := /dependsMembers.obj54@3757dca7
+.obj51@3757dca7.__eContainer := /dependsMembers.obj52@3757dca7
 .obj51@3757dca7.modules := \
 	.obj50@3757dca7./
 .obj51@3757dca7.module := 
@@ -470,23 +469,8 @@
 .obj50@3757dca7 := ELink
 .obj50@3757dca7.eSource := MyFile_DependsMember_modules.obj51@3757dca7
 .obj50@3757dca7.eTarget := 
-.obj50@3757dca7.name := embox.kernel.task.resource.mmap_full
+.obj50@3757dca7.name := embox.compat.posix.sys.mman.mmap
 .obj50@3757dca7.origin := 51:10
-
-# .obj53@3757dca7
-.obj53@3757dca7 := MyDependsMember
-.obj53@3757dca7.__eContents := 
-.obj53@3757dca7.__eContainer := /dependsMembers.obj54@3757dca7
-.obj53@3757dca7.modules := \
-	.obj52@3757dca7./
-.obj53@3757dca7.module := 
-
-# .obj52@3757dca7
-.obj52@3757dca7 := ELink
-.obj52@3757dca7.eSource := MyFile_DependsMember_modules.obj53@3757dca7
-.obj52@3757dca7.eTarget := 
-.obj52@3757dca7.name := embox.compat.posix.sys.mman.mmap
-.obj52@3757dca7.origin := 52:10
 
 
 __resource-mk/.cache/mybuild/files/src/tests/mem/Mybuild.mk := .obj1@3757dca7

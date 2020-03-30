@@ -26,7 +26,6 @@ module memmove
 {
 	source "memmove.c"
 
-	depends embox.mem.memmove
 	depends embox.framework.LibFramework
 }
 

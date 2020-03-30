@@ -33,7 +33,7 @@ build/base/obj/src/service/http_admin/http_admin_backend.o: \
  build/base/gen/include/config/embox/util/dlist.h \
  src/include/../../src/util/dlist/dlist_debug.h \
  src/include/net/util/macaddr.h \
- /media/lfs/kalli_sys/devOs/embox/build/extbld/third_party/lib/cjson/cJSON/cJSON.h \
+ /media/lfs/kalli_sys1/devOs/EMBOX/build/extbld/third_party/lib/cjson/cJSON/cJSON.h \
  build/base/include/util/log.h src/include/framework/mod/self.h \
  src/include/framework/mod/api.h src/compat/libc/include/stdbool.h \
  src/include/util/array.h \
@@ -158,7 +158,7 @@ src/include/../../src/util/dlist/dlist_debug.h:
 
 src/include/net/util/macaddr.h:
 
-/media/lfs/kalli_sys/devOs/embox/build/extbld/third_party/lib/cjson/cJSON/cJSON.h:
+/media/lfs/kalli_sys1/devOs/EMBOX/build/extbld/third_party/lib/cjson/cJSON/cJSON.h:
 
 build/base/include/util/log.h:
 

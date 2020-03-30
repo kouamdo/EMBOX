@@ -712,11 +712,13 @@
 .cfg706y.__serial_id__ := .cfg706y
 .cfg707y.__serial_id__ := .cfg707y
 .cfg708y.__serial_id__ := .cfg708y
+.cfg709y.__serial_id__ := .cfg709y
+.cfg710y.__serial_id__ := .cfg710y
 # .obj1y
 .cfg1y := ConfigFileResourceSet
 .cfg1y.resources := \
 	.cfg2y
-.cfg1y.linker := .cfg708y
+.cfg1y.linker := .cfg710y
 .cfg1y.myfileResourceSet := .my1z
 .cfg1y.exports := \
 	genconfig \
@@ -883,7 +885,8 @@
 	.cfg700y \
 	.cfg702y \
 	.cfg704y \
-	.cfg706y
+	.cfg706y \
+	.cfg708y
 
 # .obj1@15151bd5
 .cfg2y := ConfigFileResource
@@ -1056,9 +1059,10 @@
 	.cfg700y \
 	.cfg702y \
 	.cfg704y \
-	.cfg706y
+	.cfg706y \
+	.cfg708y
 
-# .obj706@15151bd5
+# .obj708@15151bd5
 .cfg3y := CfgFileContentRoot
 .cfg3y.__eContents := \
 	configuration/.cfg4y
@@ -1067,7 +1071,7 @@
 .cfg3y.name := genconfig
 .cfg3y.origin := 
 
-# .obj705@15151bd5
+# .obj707@15151bd5
 .cfg4y := CfgConfiguration
 .cfg4y.__eContents := \
 	includes/.cfg5y \
@@ -1228,7 +1232,8 @@
 	includes/.cfg700y \
 	includes/.cfg702y \
 	includes/.cfg704y \
-	includes/.cfg706y
+	includes/.cfg706y \
+	includes/.cfg708y
 .cfg4y.__eContainer := fileContentRoot/configuration.cfg3y
 .cfg4y.name := conf
 .cfg4y.origin := 3:15
@@ -3327,7 +3332,7 @@
 	annotations/.cfg290y
 .cfg289y.__eContainer := /includes.cfg4y
 .cfg289y.module := \
-	.cfg295y./.my21897z
+	.cfg295y./.my21894z
 .cfg289y.name := 
 .cfg289y.origin := 82:23
 
@@ -3368,7 +3373,7 @@
 # .obj291@15151bd5
 .cfg295y := ELink
 .cfg295y.eSource := ConfigFile_Include_module.cfg289y
-.cfg295y.eTarget := .my21897z
+.cfg295y.eTarget := .my21894z
 .cfg295y.name := embox.test.recursion
 .cfg295y.origin := 82:23
 
@@ -3378,7 +3383,7 @@
 	annotations/.cfg297y
 .cfg296y.__eContainer := /includes.cfg4y
 .cfg296y.module := \
-	.cfg302y./.my21922z
+	.cfg302y./.my21919z
 .cfg296y.name := 
 .cfg296y.origin := 84:23
 
@@ -3419,7 +3424,7 @@
 # .obj298@15151bd5
 .cfg302y := ELink
 .cfg302y.eSource := ConfigFile_Include_module.cfg296y
-.cfg302y.eTarget := .my21922z
+.cfg302y.eTarget := .my21919z
 .cfg302y.name := embox.test.stdio.printf_test
 .cfg302y.origin := 84:23
 
@@ -3633,7 +3638,7 @@
 	annotations/.cfg332y
 .cfg331y.__eContainer := /includes.cfg4y
 .cfg331y.module := \
-	.cfg337y./.my21968z
+	.cfg337y./.my21965z
 .cfg331y.name := 
 .cfg331y.origin := 89:23
 
@@ -3674,7 +3679,7 @@
 # .obj333@15151bd5
 .cfg337y := ELink
 .cfg337y.eSource := ConfigFile_Include_module.cfg331y
-.cfg337y.eTarget := .my21968z
+.cfg337y.eTarget := .my21965z
 .cfg337y.name := embox.test.stdlib.bsearch_test
 .cfg337y.origin := 89:23
 
@@ -3684,7 +3689,7 @@
 	annotations/.cfg339y
 .cfg338y.__eContainer := /includes.cfg4y
 .cfg338y.module := \
-	.cfg344y./.my21990z
+	.cfg344y./.my21987z
 .cfg338y.name := 
 .cfg338y.origin := 90:23
 
@@ -3725,7 +3730,7 @@
 # .obj340@15151bd5
 .cfg344y := ELink
 .cfg344y.eSource := ConfigFile_Include_module.cfg338y
-.cfg344y.eTarget := .my21990z
+.cfg344y.eTarget := .my21987z
 .cfg344y.name := embox.test.stdlib.qsort_test
 .cfg344y.origin := 90:23
 
@@ -6472,12 +6477,28 @@
 .cfg707y.name := embox.framework.LibFramework
 .cfg707y.origin := 215:10
 
+# .obj706@15151bd5
+.cfg708y := CfgInclude
+.cfg708y.__eContents := 
+.cfg708y.__eContainer := /includes.cfg4y
+.cfg708y.module := \
+	.cfg709y./.my21679z
+.cfg708y.name := 
+.cfg708y.origin := 217:10
+
+# .obj705@15151bd5
+.cfg709y := ELink
+.cfg709y.eSource := ConfigFile_Include_module.cfg708y
+.cfg709y.eTarget := .my21679z
+.cfg709y.name := embox.test.mem.memmove
+.cfg709y.origin := 217:10
+
 # .obj2y
-.cfg708y := ConfigLinker
-.cfg708y.relatedResourceSets := \
+.cfg710y := ConfigLinker
+.cfg710y.relatedResourceSets := \
 	.my1z
-.cfg708y.unresolvableLinks := 
-.cfg708y.resourceSet := .cfg1y
+.cfg710y.unresolvableLinks := 
+.cfg710y.resourceSet := .cfg1y
 
 
 # List of objects requested to be serialized explicitly.

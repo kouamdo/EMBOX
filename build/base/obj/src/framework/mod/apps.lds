@@ -171,6 +171,7 @@ SECTIONS {
   __module_embox__compat__atomic__pseudo_atomic_text_vma = .; *(.text.module.embox__compat__atomic__pseudo_atomic); __module_embox__compat__atomic__pseudo_atomic_text_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__atomic__pseudo_atomic_text_vma));
   __module_embox__util__LibUtil_text_vma = .; *(.text.module.embox__util__LibUtil); __module_embox__util__LibUtil_text_len = ABSOLUTE(. - ABSOLUTE(__module_embox__util__LibUtil_text_vma));
   __module_embox__framework__LibFramework_text_vma = .; *(.text.module.embox__framework__LibFramework); __module_embox__framework__LibFramework_text_len = ABSOLUTE(. - ABSOLUTE(__module_embox__framework__LibFramework_text_vma));
+  __module_embox__test__mem__memmove_text_vma = .; *(.text.module.embox__test__mem__memmove); __module_embox__test__mem__memmove_text_len = ABSOLUTE(. - ABSOLUTE(__module_embox__test__mem__memmove_text_vma));
   __module_embox__compat__libc__assert_text_vma = .; *(.text.module.embox__compat__libc__assert); __module_embox__compat__libc__assert_text_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__libc__assert_text_vma));
   __module_embox__lib__Printk_text_vma = .; *(.text.module.embox__lib__Printk); __module_embox__lib__Printk_text_len = ABSOLUTE(. - ABSOLUTE(__module_embox__lib__Printk_text_vma));
   __module_embox__compat__libc__stdio__print_text_vma = .; *(.text.module.embox__compat__libc__stdio__print); __module_embox__compat__libc__stdio__print_text_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__libc__stdio__print_text_vma));
@@ -653,6 +654,7 @@ SECTIONS {
   __module_embox__compat__atomic__pseudo_atomic_rodata_vma = .; *(.rodata.module.embox__compat__atomic__pseudo_atomic); __module_embox__compat__atomic__pseudo_atomic_rodata_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__atomic__pseudo_atomic_rodata_vma));
   __module_embox__util__LibUtil_rodata_vma = .; *(.rodata.module.embox__util__LibUtil); __module_embox__util__LibUtil_rodata_len = ABSOLUTE(. - ABSOLUTE(__module_embox__util__LibUtil_rodata_vma));
   __module_embox__framework__LibFramework_rodata_vma = .; *(.rodata.module.embox__framework__LibFramework); __module_embox__framework__LibFramework_rodata_len = ABSOLUTE(. - ABSOLUTE(__module_embox__framework__LibFramework_rodata_vma));
+  __module_embox__test__mem__memmove_rodata_vma = .; *(.rodata.module.embox__test__mem__memmove); __module_embox__test__mem__memmove_rodata_len = ABSOLUTE(. - ABSOLUTE(__module_embox__test__mem__memmove_rodata_vma));
   __module_embox__compat__libc__assert_rodata_vma = .; *(.rodata.module.embox__compat__libc__assert); __module_embox__compat__libc__assert_rodata_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__libc__assert_rodata_vma));
   __module_embox__lib__Printk_rodata_vma = .; *(.rodata.module.embox__lib__Printk); __module_embox__lib__Printk_rodata_len = ABSOLUTE(. - ABSOLUTE(__module_embox__lib__Printk_rodata_vma));
   __module_embox__compat__libc__stdio__print_rodata_vma = .; *(.rodata.module.embox__compat__libc__stdio__print); __module_embox__compat__libc__stdio__print_rodata_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__libc__stdio__print_rodata_vma));
@@ -1135,6 +1137,7 @@ SECTIONS {
   __module_embox__compat__atomic__pseudo_atomic_data_vma = .; *(.data.module.embox__compat__atomic__pseudo_atomic); __module_embox__compat__atomic__pseudo_atomic_data_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__atomic__pseudo_atomic_data_vma));
   __module_embox__util__LibUtil_data_vma = .; *(.data.module.embox__util__LibUtil); __module_embox__util__LibUtil_data_len = ABSOLUTE(. - ABSOLUTE(__module_embox__util__LibUtil_data_vma));
   __module_embox__framework__LibFramework_data_vma = .; *(.data.module.embox__framework__LibFramework); __module_embox__framework__LibFramework_data_len = ABSOLUTE(. - ABSOLUTE(__module_embox__framework__LibFramework_data_vma));
+  __module_embox__test__mem__memmove_data_vma = .; *(.data.module.embox__test__mem__memmove); __module_embox__test__mem__memmove_data_len = ABSOLUTE(. - ABSOLUTE(__module_embox__test__mem__memmove_data_vma));
   __module_embox__compat__libc__assert_data_vma = .; *(.data.module.embox__compat__libc__assert); __module_embox__compat__libc__assert_data_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__libc__assert_data_vma));
   __module_embox__lib__Printk_data_vma = .; *(.data.module.embox__lib__Printk); __module_embox__lib__Printk_data_len = ABSOLUTE(. - ABSOLUTE(__module_embox__lib__Printk_data_vma));
   __module_embox__compat__libc__stdio__print_data_vma = .; *(.data.module.embox__compat__libc__stdio__print); __module_embox__compat__libc__stdio__print_data_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__libc__stdio__print_data_vma));
@@ -1617,6 +1620,7 @@ SECTIONS {
   __module_embox__compat__atomic__pseudo_atomic_bss_vma = .; *(.bss.module.embox__compat__atomic__pseudo_atomic); __module_embox__compat__atomic__pseudo_atomic_bss_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__atomic__pseudo_atomic_bss_vma));
   __module_embox__util__LibUtil_bss_vma = .; *(.bss.module.embox__util__LibUtil); __module_embox__util__LibUtil_bss_len = ABSOLUTE(. - ABSOLUTE(__module_embox__util__LibUtil_bss_vma));
   __module_embox__framework__LibFramework_bss_vma = .; *(.bss.module.embox__framework__LibFramework); __module_embox__framework__LibFramework_bss_len = ABSOLUTE(. - ABSOLUTE(__module_embox__framework__LibFramework_bss_vma));
+  __module_embox__test__mem__memmove_bss_vma = .; *(.bss.module.embox__test__mem__memmove); __module_embox__test__mem__memmove_bss_len = ABSOLUTE(. - ABSOLUTE(__module_embox__test__mem__memmove_bss_vma));
   __module_embox__compat__libc__assert_bss_vma = .; *(.bss.module.embox__compat__libc__assert); __module_embox__compat__libc__assert_bss_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__libc__assert_bss_vma));
   __module_embox__lib__Printk_bss_vma = .; *(.bss.module.embox__lib__Printk); __module_embox__lib__Printk_bss_len = ABSOLUTE(. - ABSOLUTE(__module_embox__lib__Printk_bss_vma));
   __module_embox__compat__libc__stdio__print_bss_vma = .; *(.bss.module.embox__compat__libc__stdio__print); __module_embox__compat__libc__stdio__print_bss_len = ABSOLUTE(. - ABSOLUTE(__module_embox__compat__libc__stdio__print_bss_vma));

@@ -160,6 +160,7 @@ __image_ld_objs1 := \
 	$(OBJ_DIR)/module/embox/compat/posix/proc/atexit_stub.o \
 	$(OBJ_DIR)/module/embox/compat/posix/fs/rewinddir_stub.o \
 	$(OBJ_DIR)/module/embox/compat/atomic/pseudo_atomic.o \
+	$(OBJ_DIR)/module/embox/test/mem/memmove.o \
 	$(OBJ_DIR)/module/embox/mem/vmem_alloc_single_pool.o \
 	$(OBJ_DIR)/module/embox/mem/mmap.o \
 	$(OBJ_DIR)/module/embox/mem/marea.o \

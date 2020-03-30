@@ -203,6 +203,7 @@ __include := \
 	$(MKGEN_DIR)/src/compat/posix/proc/atexit/atexit_stub.c.rule.mk \
 	$(MKGEN_DIR)/src/compat/posix/fs/rewinddir/rewinddir_stub.c.rule.mk \
 	$(MKGEN_DIR)/src/compat/atomic/pseudo_atomic/pseudo_atomic.c.rule.mk \
+	$(MKGEN_DIR)/src/tests/mem/memmove.c.rule.mk \
 	$(MKGEN_DIR)/src/compat/libc/assert/assert.c.rule.mk \
 	$(MKGEN_DIR)/src/lib/printk.c.rule.mk \
 	$(MKGEN_DIR)/src/compat/libc/stdio/printf_impl.c.rule.mk \
@@ -974,6 +975,7 @@ __include := \
 	$(MKGEN_DIR)/module/embox/compat/posix/proc/atexit_stub.ld_rule.mk \
 	$(MKGEN_DIR)/module/embox/compat/posix/fs/rewinddir_stub.ld_rule.mk \
 	$(MKGEN_DIR)/module/embox/compat/atomic/pseudo_atomic.ld_rule.mk \
+	$(MKGEN_DIR)/module/embox/test/mem/memmove.ld_rule.mk \
 	$(MKGEN_DIR)/module/embox/mem/vmem_alloc_single_pool.ld_rule.mk \
 	$(MKGEN_DIR)/module/embox/mem/mmap.ld_rule.mk \
 	$(MKGEN_DIR)/module/embox/mem/marea.ld_rule.mk \
@@ -1381,6 +1383,7 @@ __module_list := \
 	embox.compat.atomic.pseudo_atomic \
 	embox.util.LibUtil \
 	embox.framework.LibFramework \
+	embox.test.mem.memmove \
 	embox.compat.libc.assert \
 	embox.lib.Printk \
 	embox.compat.libc.stdio.print \
